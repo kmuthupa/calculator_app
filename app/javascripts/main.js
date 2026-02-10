@@ -20,6 +20,13 @@ var Calculator = function(){
       this.saveValues(value1, value2);
       return value1 * value2;
     },
+    divide: function(value1, value2) {
+      if (value2 === 0) {
+        throw new Error("Cannot divide by zero");
+      }
+      this.saveValues(value1, value2);
+      return value1 / value2;
+    },
     clear: function() {
       this.lastValues.pop();
       this.lastValues.pop();
