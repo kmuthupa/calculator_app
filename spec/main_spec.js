@@ -25,6 +25,17 @@ describe("Calculator", function(){
     expect(product).toEqual(30);
   });
 
+  it("divides two numbers", function(){
+    var quotient = calculator.divide(10, 2);
+    expect(quotient).toEqual(5);
+  });
+
+  it("throws error when dividing by zero", function(){
+    expect(function() {
+      calculator.divide(10, 0);
+    }).toThrowError("Cannot divide by zero");
+  });
+
   it("saves numbers passed in", function(){
     calculator.add(6, 7);
     var lastValues = calculator.lastValues;
